@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  core:
+    build:
+      context: .
+      args:
+        - core_queue=generator
+        - rmq_connect=amqp://guest:guest@localhost:5672
+      network: host
+    command: TODO
+    container_name: core_service
+    network_mode: host
+    restart: always

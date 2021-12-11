@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  elsa-demo:
+    build:
+      context: .
+      args:
+        - queue=summarization_test
+        - rmq_connect=amqp://guest:guest@localhost:5672
+      network: host
+    command: "python /root/server/server.py -c /root/server/config.json"
+    container_name: insummary-backend
+    network_mode: host
+    restart: always

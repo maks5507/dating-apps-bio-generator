@@ -59,12 +59,14 @@ Most of the code is already prepared. It includes:
 * a) `GPTDataset` class with tokenization and splitting the data into batches with padding
 * b) `training_loop` function, which triggers the training procedure for the GPT and validates the results after every epoch
 * Setting up the training: it is suggested to use `ReduceLROnPlateau` LR scheduler for the training loss
-
-
+* Saving model checkpoints per epoch
 
 What this code does not include:
 
 * a) generation for the validation / test sets
-* b) ROUGE evaluation
-* c) Hyper-parameter tuning grid
-* d) Saving the model
+* *b) Hyper-parameter tuning grid
+
+## Evaluation
+Sample Evaluation script given in gpt_eval.ipynb. Includes rouge metrics and loss observations.
+
+

@@ -72,9 +72,9 @@ Online evaluation: Average user rating of generated sequences: **3.3 out of 5**
 
 Bandwidth tests:
 
-|                                                              |                                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![Screenshot 2021-12-13 at 08.55.41](/Users/Max/Library/Application Support/typora-user-images/Screenshot 2021-12-13 at 08.55.41.png) | ![Screenshot 2021-12-13 at 08.56.18](/Users/Max/Library/Application Support/typora-user-images/Screenshot 2021-12-13 at 08.56.18.png) |
+|                                             |                                       |
+| ------------------------------------------- | ------------------------------------- |
+| ![Processing Time](img/processing_time.png) | ![Latency time](img/latency_time.png) |
 
 ## Codestyle check
 

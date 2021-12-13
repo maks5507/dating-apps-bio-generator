@@ -3,6 +3,11 @@ import torch
 
 class GPTDataset(torch.utils.data.Dataset):
     def __init__(self, dataset, batch_size, tokenizer):
+        """
+         :param dataset: path to csv file with data
+         :param batch_size: mini-batch size used for training
+         :param tokenizer: GPT-2 tokenizer instance from transformers
+         """
         self.tokenizer = tokenizer
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.dataset = dataset

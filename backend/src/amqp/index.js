@@ -14,7 +14,7 @@ const channel = {
 const pack = payload => msgpack.pack(payload)
 const unpack = payload => msgpack.unpack(payload.content)
 
-const connect = async () => {
+const connect = async () => { // async connection to the AMQP queue
     if (connection.current === null) {
         console.log(`Opening amqp connection...`)
         connection.current = Promise.resolve(
@@ -34,13 +34,13 @@ const openChannel = async () => {
     return channel.current
 }
 
-const consume = (channel, recvQueue) => {
+const consume = (channel, recvQueue) => { // implementation of 'listen' method
     return new Promise(resolve => {
         channel.consume(recvQueue, resolve)
     })
 }
 
-const fetch = (exchange, keys, message) => {
+const fetch = (exchange, keys, message) => { // implementation of 'fetch' method
     return openChannel().then(async channel => {
         const queue = await channel.assertQueue("", { exclusive: true })
 
@@ -51,13 +51,13 @@ const fetch = (exchange, keys, message) => {
             replyTo: queue.queue,
         })
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => { // temporary queue deleted on timeout
             const fetchTimeout = setTimeout(() => {
                 channel.deleteQueue(queue.queue)
                 reject(new Error("Timeout error"))
             }, TIMEOUT)
 
-            consume(channel, queue.queue)
+            consume(channel, queue.queue) // waiting for the response message
                 .then(message => {
                     if (message === null) throw new Error()
                     clearTimeout(fetchTimeout)
@@ -65,10 +65,10 @@ const fetch = (exchange, keys, message) => {
                     console.log("Packed response:", message)
                     return message
                 })
-                .then(unpack)
+                .then(unpack) // unpacking the response
                 .then(response => {
                     console.log("Unpacked response:", response)
-                    if (response.errors && response.errors.length > 0)
+                    if (response.errors && response.errors.length > 0) // checking for errors
                         reject(new Error(response.errors[0]))
                     else resolve(response.data)
                 })
@@ -79,7 +79,7 @@ const fetch = (exchange, keys, message) => {
     })
 }
 
-const listen = async (exchange, type, keys, resolve) => {
+const listen = async (exchange, type, keys, resolve) => { // creates new temporary queue if there is no binding with the specified routing key
     openChannel().then(async channel => {
         channel.assertExchange(exchange, type, { durable: false })
 

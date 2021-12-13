@@ -9,7 +9,12 @@ import torch.optim as optim
 
 class Trainer:
     def __init__(self, train_data, valid_data, batch_size, pretrained_checkpoint=None):
-
+        """
+         :param train_data: pickle dump of training set
+         :param valid_data: pickle dump of validation set
+         :param batch_size: minibatch size used for training
+         :param pretrained_checkpoint (optional): path to the partitially trained model
+         """
         self.train = pickle.load(open(train_data, 'rb'))
         self.val = pickle.load(open(valid_data, 'rb'))
 
@@ -26,6 +31,16 @@ class Trainer:
     @staticmethod
     def train_loop(model, optimizer, scheduler, train_dataset, device, epoch=5,
                    val_dataset=None, save_model_at_end=False, output_dir='./'):
+        """
+         :param model: model on the correct device
+         :param optimizer: torch optimizer instance
+         :param scheduler: learning rate scheduler instance
+         :param train_dataset: train dataset instance of the GPTDataset class
+         :param val_dataset: validation dataset instance of the GPTDataset class
+         :param epoch: number of epoch to train the model for
+         :param save_model_at_end: whether to save the model at the end of training
+         :param output_dir: path to the directory where model will be saved
+         """
         train_losses = []
         val_losses = []
 

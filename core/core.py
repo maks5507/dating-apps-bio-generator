@@ -3,13 +3,17 @@
 #
 
 from transformers import GPT2LMHeadModel, GPT2TokenizerFast
-
+import torch
 
 class Core:
     def __init__(self, path_to_model, log):
+        """
+         :param path_to_model: path to the pre-trained checkpoint
+         :param log: writable log file descriptior (from twisted)
+         """
         self.model = GPT2LMHeadModel.from_pretrained('distilgpt2')
 
-        self.model.load_
+        self.model.load_state_dict(torch.load(path_to_model))
         self.tokenizer = GPT2TokenizerFast.from_pretrained('distilgpt2')
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.log = log
@@ -17,6 +21,10 @@ class Core:
         self.mapping = ['age', 'education', 'job', 'sex', 'sign']
 
     def run(self, action, text):
+        """
+         :param action: ignored
+         :param text: set of features provided by users, empty string if no features were provided
+         """
         try:
             premise = ''
             for sample, category in zip(text, self.mapping):       

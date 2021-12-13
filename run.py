@@ -1,5 +1,5 @@
 #
-# Created by maks5507 (me@maksimeremeev.com)
+# Created by Maksim Eremeev (mae9785@nyu.edu)
 #
 
 

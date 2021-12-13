@@ -1,5 +1,5 @@
 #
-# Created by maks5507 (me@maksimeremeev.com)
+# Created by Maksim Eremeev (mae9785@nyu.edu)
 #
 
 import amqp_interface
@@ -14,6 +14,10 @@ class Worker:
 
     @amqp_interface.class_consumer
     def __read(self, payload, props):
+        """
+        :param payload: payload from message, should be msgpacked
+        :param props: message properties, ignored
+        """
         try:
             data = msgpack.unpackb(payload, raw=False)
 
@@ -30,6 +34,10 @@ class Worker:
         return result
 
     def run(self, rmq_connect, rmq_queue):
+        """
+        :param rmq_connect: url-based parameters to connect to the messsage queue. Sample: amqp://guest:guest@localhost:5672
+        :param rmq_queue: queue name to connect
+        """
         try:
             interface = amqp_interface.AMQPInterface(url_parameters=rmq_connect)
             interface.listen(rmq_queue, self.__read)

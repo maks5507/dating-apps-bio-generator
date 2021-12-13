@@ -1,6 +1,6 @@
-# Backend for the OOPS project
+# Async Backend, Node.JS
 
-**Author**: Maksim Eremeev (me@maksimeremeev.com)
+**Author**: Maksim Eremeev (mae9785@nyu.edu)
 
 ### Starting an instance
 
@@ -8,6 +8,8 @@
 docker-compose build
 docker-compose up -d
 ```
+
+
 
 
 

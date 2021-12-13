@@ -1,8 +1,3 @@
-//
-// Created by maks5507 (me@maksimeremeev.com)
-//
-
-
 const constructData = () => {
   const urls = urlsIds.map(urlId => $(urlId).val())
 

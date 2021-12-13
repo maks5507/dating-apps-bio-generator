@@ -1,6 +1,5 @@
 import amqp from "amqplib"
 import msgpack from "msgpack"
-// import { TimeoutError } from "./errors/index.js"  // TODO: Fix it
 
 const TIMEOUT = 60 * 1000
 
@@ -55,7 +54,7 @@ const fetch = (exchange, keys, message) => {
         return new Promise((resolve, reject) => {
             const fetchTimeout = setTimeout(() => {
                 channel.deleteQueue(queue.queue)
-                reject(new Error("Timeout error"))  // TODO: TimeoutError({ exchange, keys, ...message }))
+                reject(new Error("Timeout error"))
             }, TIMEOUT)
 
             consume(channel, queue.queue)

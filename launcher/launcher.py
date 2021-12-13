@@ -14,10 +14,16 @@ from .worker import Worker
 
 class Launcher:
     def __init__(self, log_file):
+        """
+        :param log_file: path to file to write log messages to
+        """
         self.log = Logger(observer=textFileLogObserver(open(log_file, 'a')))
 
     @staticmethod
     def __terminate_all(processes):
+        """
+        Terminates all dependent processes running
+        """
         if isinstance(processes, list):
             for process in processes:
                 process.terminate()
@@ -27,6 +33,9 @@ class Launcher:
                     process.terminate()
 
     def launch(self, config):
+        """
+        :param config: configuration file for the launcher=. See the required format in readme
+        """
         processes = {}
         try:
             config = json.loads(config)
@@ -69,16 +78,12 @@ class Launcher:
                         self.log.info('Launching {job_id} number {i}', job_name=job_id, i=i)
 
                         for j in range(job['n_jobs']):
-                            if job['mode'] == 'processor':
-                                job['run_args']['chunk'] = chunks[j]
                             if job['add_process_num']:
                                 job['run_args']['process_num'] = j
 
                             target = job['instance'].run
                             if job['mode'] == 'worker':
                                 target = Worker(job['instance'].run, self.log).run
-                            elif job['mode'] == 'processor':
-                                target = Processor(job['instance']).run
 
                             processes[job_id] += [multiprocessing.Process(target=target,
                                                                           kwargs=job['run_args'])]

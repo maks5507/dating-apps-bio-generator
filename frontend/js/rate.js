@@ -1,8 +1,3 @@
-//
-// Created by maks5507 (me@maksimeremeev.com)
-//
-
-
 to_block_before_rate = [submitButtonId, ...urlsInputsIds]
 
 const sendRating = () => {

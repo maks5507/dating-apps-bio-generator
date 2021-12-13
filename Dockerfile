@@ -4,7 +4,6 @@ ARG core_queue
 ARG rmq_connect
 
 RUN apt update; apt install vim procps build-essential git -y;
-# RUN export OMP_NUM_THREADS=1
 
 COPY requirements.txt /root/
 RUN pip install -r /root/requirements.txt

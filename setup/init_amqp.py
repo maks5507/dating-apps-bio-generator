@@ -16,6 +16,6 @@ if __name__ == "__main__":
     interface = AMQPInterface(url_parameters=args.connect[0])
 
     interface.create_queue(name=args.queue[0],
-                           exchnage_to_bind='amq.topic',
+                           exchange_to_bind='amq.topic',
                            binding_routing_key=args.queue[0])
 

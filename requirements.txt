@@ -1,0 +1,4 @@
+transformers==4.12.3
+pika==1.1.0
+Twisted
+torch

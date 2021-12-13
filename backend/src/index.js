@@ -1,8 +1,11 @@
 import express from "express"
+import cors from "cors"
 
 import amqp from "./amqp/index.js"
 
 const app = express()
+app.use(cors({origin: '*'}))
+
 const port = 22111
 
 app.use(express.json())  // To receive json bodies

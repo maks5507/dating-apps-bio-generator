@@ -1,15 +1,14 @@
 version: "3"
 
 services:
-
   rabbitmq:
     hostname: localhost
     container_name: rabbitmq
     image: rabbitmq:3.7.14-management
     ports:
     - 5672:5672
-    - 127.0.0.1:15672:15672
+    - 15672:15672
     volumes:
-    - /var/lib/localhost-rabbitmq:/var/lib/rabbitmq
+    - /root/localhost-rabbitmq:/var/lib/rabbitmq
     restart: always
 

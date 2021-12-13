@@ -1,0 +1,44 @@
+
+.gray {background: #f4f4f4; width: 960px;}
+
+/* * * Myths * * */
+.b-landing_seo_myths { position: relative; padding: 70px 0; margin-bottom: 40px; background: #f4f4f4; width: 100%;}
+
+.b-landing_seo_myths_row { position: relative; margin: 40px 0 20px 0; }
+.b-landing_seo_myths_row + .b-landing_seo_myths_row { margin: 0 0 20px 0; }
+
+.b-landing_seo_myths_cell { position: relative; padding: 60px 0 0 0; }
+.b-landing_seo_myths_cell + .b-landing_seo_myths_cell { padding: 20px 0 0 0; }
+
+.b-landing_seo_myths_cell:first-child:before { position: absolute; top: 0; left: 50%; margin-left: -2px; width: 4px; height: 60px; background: #bfbdbe; content: ''; }
+.b-landing_seo_myths_cell:first-child:after { position: absolute; top: 0; left: 50%; margin-left: -13px; width: 16px; height: 16px; background: #fafafa; border: 5px solid #ff4644; -moz-box-shadow: 0 0 0 10px #fafafa; -webkit-box-shadow: 0 0 0 10px #fafafa; box-shadow: 0 0 0 10px #fafafa; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;  -moz-transition: all 0.2s ease-in-out; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; content: ''; }
+
+.b-landing_seo_myths_row:hover .b-landing_seo_myths_cell:first-child:after { border-color: #79b7be; }
+
+.b-landing_seo_myths_balloon { position: relative; padding: 20px; font-size: 1.15em; text-align: center; background: #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; box-shadow: 1px 2px 0 1px #e6e4e5; }
+.b-landing_seo_myths_balloon strong { display: block; margin-bottom: 10px; font-weight: 500; color: #79b7be; }
+
+.b-landing_seo_myths_cell + .b-landing_seo_myths_cell .b-landing_seo_myths_balloon strong { color: #79b7be; }
+
+@media (min-width: 768px) {
+
+    .b-landing_seo_myths_row { margin: 65px 0 0 0; }
+    .b-landing_seo_myths_row + .b-landing_seo_myths_row { margin: 0; }
+
+    .b-landing_seo_myths_cell { position: static; float: left; width: 50%; padding: 10px 40px 25px 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+    .b-landing_seo_myths_cell + .b-landing_seo_myths_cell { padding: 10px 0 25px 40px; }
+
+    .b-landing_seo_myths_cell:first-child:before { bottom: 0; height: 100%; }
+
+    .b-landing_seo_myths_cell:first-child .b-landing_seo_myths_balloon { text-align: right; -moz-border-radius: 5px 0 5px 5px; -webkit-border-radius: 5px 0 5px 5px; border-radius: 5px 0 5px 5px; }
+    .b-landing_seo_myths_cell:first-child .b-landing_seo_myths_balloon:before { position: absolute; top: 2px; left: 100%; margin-left: 2px; width: 0; height: 0; border-top: 22px solid #e6e4e5; border-right: 12px solid transparent; content: ''; }
+    .b-landing_seo_myths_cell:first-child .b-landing_seo_myths_balloon:after { position: absolute; top: 0; left: 100%; width: 0; height: 0; border-top: 22px solid #fff; border-right: 12px solid transparent; content: ''; }
+
+    .b-landing_seo_myths_cell + .b-landing_seo_myths_cell .b-landing_seo_myths_balloon { text-align: left; -moz-border-radius: 0 5px 5px 5px; -webkit-border-radius: 0 5px 5px 5px; border-radius: 0 5px 5px 5px; }
+    .b-landing_seo_myths_cell + .b-landing_seo_myths_cell .b-landing_seo_myths_balloon:after { position: absolute; top: 0; right: 100%; width: 0; height: 0; border-top: 22px solid #fff; border-left: 12px solid transparent; content: ''; }
+
+    .b-landing_seo_myths_row:last-child .b-landing_seo_myths_cell { padding-bottom: 0; }
+    .b-landing_seo_myths_row:last-child .b-landing_seo_myths_cell:first-child:before { bottom: 20px; height: auto; }
+
+}
+

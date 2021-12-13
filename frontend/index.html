@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Dating app bio generator</title>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+
+  <!-- Google fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
+  <!-- load the CSS files in the right order -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.3/css/fileinput.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.3/themes/explorer/theme.min.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.3/js/plugins/piexif.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.3/js/plugins/sortable.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.3/js/plugins/purify.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.3/js/fileinput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/4.5.3/themes/explorer/theme.min.js"></script>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="3rdparty/fonts/pt-sans/regular/pt-sans-regular.css">
+  <link rel="stylesheet" href="3rdparty/fonts/pt-sans/bold/pt-sans-bold.css">
+  <link rel="stylesheet" href="3rdparty/fonts/pt-sans/caption-bold/pt-sans-caption-bold.css">
+  <link rel="stylesheet" href="3rdparty/fonts/pt-sans/caption-regular/pt-sans-caption-regular.css">
+  <link rel="stylesheet" type="text/css" href="3rdparty/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+
+  <script type="text/javascript" src="js/constants.js"></script>
+  <script type="text/javascript" src="js/rate.js"></script>
+  <script type="text/javascript" src="js/processUrls.js"></script>
+  <script type="text/javascript" src="js/request.js"></script>
+
+  <script type="text/javascript">
+    window.currentFiles = {};
+
+    $(document).ready(() => {
+      $(loadingGifId).fadeOut(0)
+      $(priorityDivId).fadeOut(0)
+      $(rateId).fadeOut(0)
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class='custom-container'>
+        <div class='container-fluid focus'>
+          <div class='row pl-5 mb-2'>
+            <div class='col-3'>
+              <h2>Dating app bio generator</h2>
+            </div>
+            <div class='col-9 mt-2'>
+              <ul id="navigation">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class='custom-container'>
+    <div class='container-fluid focus'>
+      <div class="row">
+        <div class='col-4 mt-5'>
+          <h4 class="top_15"><strong>What is this generator?</strong></h4><br>
+          <p class="body-desc">This is a dating app profile generator that helps you save time on brainstorming a catchy bio. We apply AI to synthesize a personalized description of you without asking you to bribe about yourself. Most bios are boring, while we incorporate serendipity into your profile and helps you stand out 10x the number of matches. </p>
+        </div>
+        <div class='col-4 mt-5'>
+          <h4 class="top_15"><strong>Just name, gender and age </strong></h4><br>
+	  <p class="body-desc">Using these 3 values, the algorithm will create an infinite amount of bios for you to choose from. Just click refresh and rate how the model does each time to improve the quality of the results!</p>
+        </div>
+        <div class='col-4 mt-5'>
+	  <h4><strong>First-class AI software</strong></h4><br>
+          <p class="body-desc"> We use the latest NLP tools trained on a large amount of data to generate and select the most catcy descriptions.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid body">
+      <div class="row p-5">
+        <div class="col-7">
+          <div class="tabs">
+            <div class="content">
+              <section>
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                  <span class="label-input100">Age</span>
+                  <input class="input100" type="text" name="name" id="url-1" placeholder="">
+                  <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                  <span class="label-input100">Education</span>
+                  <input class="input100" type="text" name="name" id="url-2" placeholder="">
+                  <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                  <span class="label-input100">Job</span>
+                  <input class="input100" type="text" name="name" id="url-3" placeholder="">
+                  <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                  <span class="label-input100">Sex ("m" of "f")</span>
+                  <input class="input100" type="text" name="name" id="url-4" placeholder="">
+                  <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Name is required">
+                  <span class="label-input100">Sign</span>
+                  <input class="input100" type="text" name="name" id="url-5" placeholder="">
+                  <span class="focus-input100"></span>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div id="factor-range-wrapper">
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn" id="summarize">
+                  <span>
+                    Generate
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-5">
+          <span><strong>Generated bio:</strong></span>
+          <div id='result'>
+            <div id="loading" class="loading">
+              <img src="img/loading.gif" />
+            </div>
+            <div class="rate-div" id='rate'>
+              <p class='priority-span'>Please, rate the output to proceed generating.</p>
+              <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+              </div>
+              <button class="contact100-form-btn submit-rating" id="submit-rating">
+                <span>
+                  Submit & Proceed
+                </span>
+              </button>
+            </div>
+            <ul></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hr">&nbsp;</div>
+  <footer>
+  </footer>
+
+</body>

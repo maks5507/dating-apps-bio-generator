@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  frontend:
+    build:
+      context: .
+    container_name: biogen-frontend
+    network_mode: host
+    restart: always

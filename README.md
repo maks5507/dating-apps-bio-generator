@@ -2,7 +2,9 @@
 
 **Authors**: Maksim Eremeev (eremeev@nyu.edu), Anya Trivedi (anya.trivedi@nyu.edu), Anastasia Shaura (as15846@nyu.edu)
 
-Brief description: https://drive.google.com/file/d/1Cj-Gn0p4NIREuzCJ2YG5nmodHVr2dDmC/view?usp=sharing
+Project Proposal: https://drive.google.com/file/d/1Cj-Gn0p4NIREuzCJ2YG5nmodHVr2dDmC/view?usp=sharing
+
+Project Report: https://drive.google.com/file/d/1vL-axR95CEFmtXedoCwFbOWSMIuO3vPW/view?usp=sharing
 
 Detailed results: TBD
 

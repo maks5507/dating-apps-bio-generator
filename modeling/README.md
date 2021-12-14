@@ -61,10 +61,6 @@ Most of the code is already prepared. It includes:
 * Setting up the training: it is suggested to use `ReduceLROnPlateau` LR scheduler for the training loss
 * Saving model checkpoints per epoch
 
-What this code does not include:
-
-* a) generation for the validation / test sets
-* *b) Hyper-parameter tuning grid
 
 ## Evaluation
 Sample Evaluation script given in gpt_eval.ipynb. Includes rouge metrics and loss observations.

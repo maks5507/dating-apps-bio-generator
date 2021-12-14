@@ -1,4 +1,26 @@
-# Guidelines for using the sample GPT-2 fine-tuning script
+
+# Data
+
+Data is saved in the `okcupid_{train, val, test}.pkl` pickle dumps. 
+
+Loading the data:
+
+```python
+import pickle
+train = pickle.load(open(okcupid_train, 'rb'))
+```
+
+
+
+# Fine-tuning
+
+The sample fine-tuning script is given in the gpt2_training.py and preprocess.py scripts. These scripts preprocess the data and run the training job for finetuning GPT-2. 
+
+The GPTDataset is built in gptdataset.py, it forms batches for training and sets up the GPT Tokenizer.
+
+
+
+# Guidelines for using the sample GPT-2 fine-tuning script on Greene
 
 Getting a GPU on Greene
 
@@ -37,32 +59,5 @@ Then, you jupyter notebook is available at `http://localhost:8965`
 
 
 
-## Data
-
-Data is saved in the `okcupid_{train, val, test}.pkl` pickle dumps. 
-
-Loading the data:
-
-```python
-import pickle
-train = pickle.load(open(okcupid_train, 'rb'))
-```
-
-
-
-## Fine-tuning
-
-The sample fine-tuning script is given in the gpt2_finetuning.ipynb
-
-Most of the code is already prepared. It includes: 
-
-* a) `GPTDataset` class with tokenization and splitting the data into batches with padding
-* b) `training_loop` function, which triggers the training procedure for the GPT and validates the results after every epoch
-* Setting up the training: it is suggested to use `ReduceLROnPlateau` LR scheduler for the training loss
-* Saving model checkpoints per epoch
-
-
-## Evaluation
-Sample Evaluation script given in gpt_eval.ipynb. Includes rouge metrics and loss observations.
 
 

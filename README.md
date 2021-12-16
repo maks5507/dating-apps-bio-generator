@@ -4,9 +4,7 @@
 
 Project Proposal: https://drive.google.com/file/d/1Cj-Gn0p4NIREuzCJ2YG5nmodHVr2dDmC/view?usp=sharing
 
-Project Report: https://drive.google.com/file/d/1vL-axR95CEFmtXedoCwFbOWSMIuO3vPW/view?usp=sharing
-
-Detailed results: TBD
+Project Report: https://drive.google.com/file/d/1EoG3EQLmKB9aXoaBZ_t9TUVfMWsr8vVE/view?usp=sharing
 
 Presentation recording: https://drive.google.com/file/d/1yluJDCI8L45zqTKUxVTLz1vbdOGvCFxo/view?usp=sharing
 
